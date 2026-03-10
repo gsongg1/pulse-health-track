@@ -17,6 +17,16 @@ Pulse Health Track is a trust-centered preventive wellbeing demo for employee su
 - Individual notes, named check-in histories, and person-by-person health timelines stay out of the admin UI
 - Small team segments are suppressed so organization reporting remains high level
 
+## Screenshots
+
+### Landing page
+
+![Pulse landing page](docs/screenshots/home.png)
+
+### Sign-up flow
+
+![Pulse sign-up flow](docs/screenshots/sign-up.png)
+
 ## Tech Stack
 
 - Next.js 15
@@ -72,13 +82,6 @@ The current MVP runs on seeded in-memory demo data, so a database is not require
    ```bash
    npm run seed
    ```
-
-## Demo Routes
-
-- `/sign-in` for seeded employee, manager, and admin accounts
-- `/sign-up` to create a fresh employee and complete onboarding
-- `/app/dashboard` for the employee experience
-- `/admin/dashboard` for the admin overview
 
 ## Notes
 
