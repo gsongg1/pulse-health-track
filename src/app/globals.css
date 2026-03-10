@@ -1,0 +1,63 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #f3f6f0;
+  --surface: rgba(255, 255, 255, 0.9);
+  --surface-strong: #ffffff;
+  --foreground: #153227;
+  --muted: #62786b;
+  --border: rgba(21, 50, 39, 0.08);
+  --accent: #1f7a5d;
+  --accent-soft: #dff1ea;
+  --warning: #c8912d;
+  --danger: #d96d5f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--foreground);
+  background:
+    radial-gradient(circle at top left, rgba(205, 231, 218, 0.65), transparent 32%),
+    radial-gradient(circle at 85% 10%, rgba(252, 227, 208, 0.65), transparent 28%),
+    linear-gradient(180deg, #fcfdfb 0%, var(--background) 100%);
+  font-family: "Aptos", "Trebuchet MS", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(31, 122, 93, 0.18);
+}
+
+.pulse-grid {
+  background-image:
+    linear-gradient(rgba(21, 50, 39, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(21, 50, 39, 0.025) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.glass-card {
+  backdrop-filter: blur(14px);
+  background: rgba(255, 255, 255, 0.82);
+}

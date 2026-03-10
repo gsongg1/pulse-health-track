@@ -1,0 +1,208 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  EMPLOYEE
+  ADMIN
+  MANAGER
+}
+
+enum WorkMode {
+  REMOTE
+  HYBRID
+  ONSITE
+}
+
+enum CheckInFrequency {
+  DAILY
+  WEEKLY
+}
+
+enum RecommendationCategory {
+  MOVEMENT
+  RECOVERY
+  FOCUS
+  SLEEP_HYGIENE
+  STRESS_REGULATION
+  WORKLOAD_MANAGEMENT
+  SOCIAL_WELLBEING
+  SUPPORT_RESOURCES
+}
+
+enum RecommendationStatus {
+  ACTIVE
+  COMPLETED
+  SNOOZED
+  DISMISSED
+}
+
+enum EffortLevel {
+  LOW
+  MEDIUM
+  HIGH
+}
+
+enum ChallengeType {
+  WALKING
+  HYDRATION
+  STRETCH
+  SHUTDOWN
+  MINDFUL_MINUTE
+}
+
+enum ReminderFrequency {
+  LOW
+  NORMAL
+  HIGH
+}
+
+model Organization {
+  id              String           @id @default(cuid())
+  name            String
+  size            Int
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  users           User[]
+  challenges      Challenge[]
+  analyticsEvents AnalyticsEvent[]
+}
+
+model User {
+  id                String                 @id @default(cuid())
+  name              String
+  email             String                 @unique
+  role              Role
+  organizationId    String
+  department        String
+  title             String
+  createdAt         DateTime               @default(now())
+  updatedAt         DateTime               @updatedAt
+  organization      Organization           @relation(fields: [organizationId], references: [id])
+  onboardingProfile OnboardingProfile?
+  checkIns          CheckIn[]
+  wellnessSnapshots WellnessSnapshot[]
+  recommendations   Recommendation[]
+  challengeEntries  ChallengeParticipation[]
+  analyticsEvents   AnalyticsEvent[]
+  privacyPreference PrivacyPreference?
+}
+
+model OnboardingProfile {
+  id                       String            @id @default(cuid())
+  userId                   String            @unique
+  baselineSleep            Int
+  baselineStress           Int
+  baselineMovement         Int
+  workMode                 WorkMode
+  preferredNudgeCategories Json
+  challengeOptIn           Boolean
+  checkInFrequency         CheckInFrequency
+  createdAt                DateTime          @default(now())
+  updatedAt                DateTime          @updatedAt
+  user                     User              @relation(fields: [userId], references: [id])
+}
+
+model CheckIn {
+  id            String   @id @default(cuid())
+  userId        String
+  date          DateTime
+  sleepScore    Int
+  stressScore   Int
+  movementScore Int
+  focusScore    Int
+  workloadScore Int
+  optionalNote  String?
+  createdAt     DateTime @default(now())
+  user          User     @relation(fields: [userId], references: [id])
+
+  @@index([userId, date])
+}
+
+model WellnessSnapshot {
+  id               String   @id @default(cuid())
+  userId           String
+  date             DateTime
+  burnoutRiskScore Int
+  recoveryScore    Int
+  engagementScore  Int
+  consistencyScore Int
+  createdAt        DateTime @default(now())
+  user             User     @relation(fields: [userId], references: [id])
+
+  @@index([userId, date])
+}
+
+model Recommendation {
+  id            String                 @id @default(cuid())
+  userId        String
+  category      RecommendationCategory
+  title         String
+  description   String
+  explanation   String
+  reasonCode    String
+  effortLevel   EffortLevel
+  status        RecommendationStatus
+  priority      Int
+  completionCta String
+  generatedAt   DateTime               @default(now())
+  completedAt   DateTime?
+  dismissedAt   DateTime?
+  snoozedUntil  DateTime?
+  user          User                   @relation(fields: [userId], references: [id])
+
+  @@index([userId, generatedAt])
+}
+
+model Challenge {
+  id             String                 @id @default(cuid())
+  organizationId String
+  title          String
+  description    String
+  challengeType  ChallengeType
+  targetValue    Int
+  startDate      DateTime
+  endDate        DateTime
+  createdAt      DateTime               @default(now())
+  organization   Organization           @relation(fields: [organizationId], references: [id])
+  participations ChallengeParticipation[]
+}
+
+model ChallengeParticipation {
+  id            String    @id @default(cuid())
+  challengeId   String
+  userId        String
+  progressValue Int
+  joinedAt      DateTime  @default(now())
+  completedAt   DateTime?
+  challenge     Challenge @relation(fields: [challengeId], references: [id])
+  user          User      @relation(fields: [userId], references: [id])
+
+  @@unique([challengeId, userId])
+}
+
+model AnalyticsEvent {
+  id             String        @id @default(cuid())
+  userId         String?
+  organizationId String?
+  eventType      String
+  metadata       Json
+  createdAt      DateTime      @default(now())
+  user           User?         @relation(fields: [userId], references: [id])
+  organization   Organization? @relation(fields: [organizationId], references: [id])
+}
+
+model PrivacyPreference {
+  id                      String            @id @default(cuid())
+  userId                  String            @unique
+  challengeOptIn          Boolean
+  notesAnalyticsOptIn     Boolean
+  reminderFrequency       ReminderFrequency
+  dataDeletionRequestedAt DateTime?
+  user                    User              @relation(fields: [userId], references: [id])
+}
