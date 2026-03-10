@@ -19,13 +19,13 @@ Pulse Health Track is a trust-centered preventive wellbeing demo for employee su
 
 ## Screenshots
 
-### Landing page
+### Employee dashboard
 
-![Pulse landing page](docs/screenshots/home.png)
+![Pulse employee dashboard](docs/screenshots/employee-dashboard.png)
 
-### Sign-up flow
+### Admin dashboard
 
-![Pulse sign-up flow](docs/screenshots/sign-up.png)
+![Pulse admin dashboard](docs/screenshots/admin-dashboard.png)
 
 ## Tech Stack
 
