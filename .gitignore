@@ -12,3 +12,5 @@ coverage
 .env.production.local
 .vercel
 .DS_Store
+next-env.d.ts
+\# Alan-Inspired Preventive Health E.md
