@@ -34,14 +34,14 @@ export default async function InvitePage() {
             <Badge className="w-fit bg-white/10 text-white">Northstar Health Labs</Badge>
             <h1 className="text-4xl font-semibold">Finish onboarding in under two minutes.</h1>
             <p className="text-white/80">
-              Pulse uses your baseline answers to set a starting wellness snapshot, tune effort levels, and generate your first recommendation. Admins never see individual answers.
+              Pulse uses your baseline answers to shape your first recommendations and tune effort levels. Team admins do not see your individual answers.
             </p>
             <div className="rounded-[28px] bg-white/10 p-5">
               <p className="text-sm uppercase tracking-[0.18em] text-white/60">Privacy promise</p>
               <ul className="mt-4 space-y-3 text-sm text-white/80">
                 <li>Optional notes stay out of admin views.</li>
                 <li>Department segments under 5 people are suppressed.</li>
-                <li>This experience supports prevention, not diagnosis or medical advice.</li>
+                <li>This experience is for support and prevention, not performance review, diagnosis, or medical advice.</li>
               </ul>
             </div>
           </CardContent>
@@ -102,7 +102,7 @@ export default async function InvitePage() {
               </div>
               <label className="flex items-center gap-3 rounded-2xl bg-[#f5f8f4] px-4 py-3 text-sm">
                 <input defaultChecked name="challengeOptIn" type="checkbox" value="true" />
-                Join optional team challenges and see alias-based or anonymized participation.
+                Join optional team challenges with alias-based or anonymized participation.
               </label>
               <Button size="lg" type="submit">Finish onboarding</Button>
             </form>

@@ -24,13 +24,13 @@ export default async function SignInPage() {
           <p className="text-sm uppercase tracking-[0.18em] text-white/70">Pulse demo access</p>
           <h1 className="text-4xl font-semibold">Choose a seeded employee, manager, or admin account.</h1>
           <p className="text-white/80">
-            This MVP uses demo auth so you can move through private employee flows and aggregate admin insights without external setup.
+            This MVP uses demo auth so you can explore private employee flows and a deliberately limited admin view without external setup.
           </p>
           <div className="grid gap-3">
             {demoAccounts.map((account) => (
               <div className="rounded-[24px] bg-white/10 p-4" key={account.id}>
                 <p className="font-medium">{account.name}</p>
-                <p className="text-sm text-white/70">{account.role.toLowerCase()} � {account.department}</p>
+                <p className="text-sm text-white/70">{account.role.toLowerCase()} - {account.department}</p>
               </div>
             ))}
           </div>

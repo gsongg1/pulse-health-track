@@ -15,10 +15,10 @@ export default function HomePage() {
           <div className="space-y-6">
             <p className="text-sm uppercase tracking-[0.2em] text-[color:var(--muted)]">Pulse preventive health platform</p>
             <h1 className="max-w-3xl text-5xl font-semibold tracking-tight text-ink sm:text-6xl">
-              Lightweight check-ins, explainable nudges, and trust-first team insights.
+              Private check-ins, practical nudges, and carefully bounded team insight.
             </h1>
             <p className="max-w-2xl text-lg text-[color:var(--muted)]">
-              Pulse helps employers reduce burnout risk without turning wellness into surveillance. Employees get short, private check-ins and calmer recommendations. HR only sees anonymized trends.
+              Pulse gives employees a calm place to reflect on sleep, stress, movement, focus, and workload. Recommendations stay personal, while organization views are limited to anonymized patterns meant for planning and support, not employee evaluation.
             </p>
             <div className="flex flex-wrap gap-3">
               <Link href="/sign-in">
@@ -38,12 +38,12 @@ export default function HomePage() {
                 <ShieldCheck className="h-10 w-10 text-[#9fd7c1]" />
                 <div>
                   <p className="text-sm uppercase tracking-[0.18em] text-white/70">Privacy model</p>
-                  <p className="text-2xl font-semibold">Aggregate-only employer insight</p>
+                  <p className="text-2xl font-semibold">Team trends without personal monitoring</p>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-[28px] bg-white/10 p-5">
-                  <p className="text-sm text-white/70">Seeded employees</p>
+                  <p className="text-sm text-white/70">Seeded participants</p>
                   <p className="mt-2 text-3xl font-semibold">{employeeCount}</p>
                 </div>
                 <div className="rounded-[28px] bg-white/10 p-5">
@@ -58,7 +58,7 @@ export default function HomePage() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Users className="h-4 w-4 text-[#f5d7ae]" />
-                  Department insights automatically suppress groups under five employees.
+                  Organization views suppress small groups and avoid person-level timelines.
                 </div>
               </div>
             </CardContent>

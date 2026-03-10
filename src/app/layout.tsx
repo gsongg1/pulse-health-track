@@ -4,7 +4,7 @@ import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Pulse",
-  description: "A privacy-first preventive health engagement platform for employer benefits teams."
+  description: "Trust-centered preventive wellbeing support with private employee check-ins and carefully bounded organization insights."
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {

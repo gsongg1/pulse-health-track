@@ -20,7 +20,7 @@ export default async function PrivacyPage({
         <Badge>Transparency and control</Badge>
         <h1 className="mt-4 text-4xl font-semibold text-ink">Your privacy controls</h1>
         <p className="mt-3 max-w-3xl text-[color:var(--muted)]">
-          Pulse collects short check-ins, action feedback, and optional challenge participation to personalize preventive wellness support. Admins see anonymized trends only and never see individual notes or person-level health records in the UI.
+          Pulse uses check-ins, action feedback, and optional challenge participation to personalize your experience. Organization admins only see high-level anonymized trends in the UI, never your note text or a named wellbeing timeline.
         </p>
         {params.exported ? <p className="mt-4 text-sm text-moss">Your export request has been recorded for this MVP session.</p> : null}
         {params.deletion ? <p className="mt-2 text-sm text-[#b55b52]">Your data deletion request has been recorded for this MVP session.</p> : null}
@@ -59,11 +59,11 @@ export default async function PrivacyPage({
           <CardContent className="space-y-4">
             <div className="rounded-[24px] bg-[#f5f8f4] p-4 text-sm text-[color:var(--muted)]">
               <p className="font-medium text-ink">What admins can see</p>
-              <p className="mt-2">Participation rates, average trend lines, active challenge participation, and privacy-safe burnout buckets.</p>
+              <p className="mt-2">Blended participation rates, average trend lines, active challenge participation, and privacy-protected burnout buckets.</p>
             </div>
             <div className="rounded-[24px] bg-[#f5f8f4] p-4 text-sm text-[color:var(--muted)]">
               <p className="font-medium text-ink">What admins cannot see</p>
-              <p className="mt-2">Your raw note text, your named check-in records, or a personally identifiable health timeline in the UI.</p>
+              <p className="mt-2">Your raw note text, your named check-in history, or a person-by-person activity feed in the UI.</p>
             </div>
             <div className="flex flex-wrap gap-3">
               <form action={requestDataExportAction}>
@@ -79,4 +79,3 @@ export default async function PrivacyPage({
     </div>
   );
 }
-

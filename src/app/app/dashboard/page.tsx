@@ -30,7 +30,7 @@ export default async function DashboardPage() {
             <Badge>Private employee view</Badge>
             <h1 className="text-4xl font-semibold text-ink">Good to see you, {dashboard.user.name.split(" ")[0]}.</h1>
             <p className="max-w-2xl text-[color:var(--muted)]">
-              Your dashboard focuses on the smallest useful next step. Optional notes remain personal, and only anonymized patterns ever flow upward.
+              Your dashboard focuses on the smallest useful next step. Optional notes remain personal, and only high-level anonymized patterns contribute to organization reporting.
             </p>
           </div>
           <div className="rounded-[28px] bg-[#143126] px-5 py-4 text-white shadow-card">
@@ -121,7 +121,7 @@ export default async function DashboardPage() {
                 <ShieldCheck className="h-5 w-5 text-[#9fd7c1]" />
                 <p className="font-medium">Privacy stays intact inside team motivation.</p>
               </div>
-              <p className="mt-2 text-sm text-white/80">Leaderboards can stay alias-based or anonymized, and admin reporting only rolls up completion trends.</p>
+              <p className="mt-2 text-sm text-white/80">Leaderboards can stay alias-based or anonymized, and organization reporting only rolls up completion trends.</p>
             </div>
           </CardContent>
         </Card>

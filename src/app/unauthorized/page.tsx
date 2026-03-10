@@ -10,7 +10,7 @@ export default function UnauthorizedPage() {
           <p className="text-sm uppercase tracking-[0.18em] text-[color:var(--muted)]">Access limited</p>
           <h1 className="text-4xl font-semibold text-ink">This view is protected by role and privacy rules.</h1>
           <p className="text-[color:var(--muted)]">
-            Pulse keeps employer insights aggregate-only and restricts views based on your current role.
+            Pulse keeps organization views privacy-bounded and restricts access based on your current role.
           </p>
           <div className="flex justify-center gap-3">
             <Link href="/app/dashboard">

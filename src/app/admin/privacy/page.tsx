@@ -14,7 +14,7 @@ export default async function AdminPrivacyPage() {
         <Badge>Trust and restraint</Badge>
         <h1 className="mt-4 text-4xl font-semibold text-ink">Admin privacy summary</h1>
         <p className="mt-3 max-w-3xl text-[color:var(--muted)]">
-          Pulse is designed so employer customers can learn about overall wellbeing patterns without exposing raw personal health records, note text, or identifiable check-in timelines.
+          Pulse is designed to give organizations a coarse picture of team wellbeing without exposing raw personal health records, note text, or employee-by-employee timelines.
         </p>
       </section>
       <div className="grid gap-6 xl:grid-cols-[1fr_1fr]">
@@ -24,13 +24,13 @@ export default async function AdminPrivacyPage() {
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-[color:var(--muted)]">
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
-              Participation rate, challenge engagement, average stress and sleep trends, weekly active usage, and broad burnout risk buckets.
+              Participation rate, challenge engagement, average stress and sleep trends, weekly active usage, and broad burnout risk buckets for planning and support.
             </div>
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
               Department filters only when at least five people match the segment.
             </div>
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
-              Aggregate counts of export and deletion requests for operational follow-up.
+              Aggregate counts of export and deletion requests for operational follow-up, not employee scoring.
             </div>
           </CardContent>
         </Card>
@@ -40,10 +40,10 @@ export default async function AdminPrivacyPage() {
           </CardHeader>
           <CardContent className="space-y-4 text-sm text-[color:var(--muted)]">
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
-              Individual notes, named health timelines, and user-by-user recommendation histories are not available in the admin UI.
+              Individual notes, named health timelines, raw check-in feeds, and user-by-user recommendation histories are not available in the admin UI.
             </div>
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
-              Challenge participation is summarized without exposing sensitive context.
+              Challenge participation is summarized without turning manager views into participant scoreboards.
             </div>
             <div className="rounded-[24px] bg-[#f5f8f4] p-4">
               Pulse supports prevention and engagement only. It does not diagnose or provide medical advice.

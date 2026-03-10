@@ -17,7 +17,7 @@ export default async function AdminDashboardPage() {
         <Badge>Aggregate-only organization view</Badge>
         <h1 className="mt-4 text-4xl font-semibold text-ink">Organization wellbeing overview</h1>
         <p className="mt-3 max-w-3xl text-[color:var(--muted)]">
-          This admin view is intentionally restrained. It shows anonymized trends, participation health, and challenge engagement while keeping person-level records out of sight.
+          This admin view is intentionally limited. It supports team planning with anonymized trends, participation health, and challenge engagement while keeping employee-by-employee records out of reach.
         </p>
       </section>
       <section className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">

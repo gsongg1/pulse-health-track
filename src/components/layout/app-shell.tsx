@@ -67,7 +67,7 @@ export function AppShell({
               <p className="text-sm font-medium">Trust-first by default</p>
             </div>
             <p className="mt-3 text-sm text-white/80">
-              Admin views stay aggregate-only, and team segments under five people are automatically suppressed.
+              Admin views stay aggregate-only, small team segments are suppressed, and the product is framed for support rather than scorekeeping.
             </p>
           </div>
           <form action={signOutAction} className="mt-6">

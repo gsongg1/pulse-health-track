@@ -14,7 +14,7 @@ export default async function AdminChallengesPage() {
         <Badge>Seeded challenge program</Badge>
         <h1 className="mt-4 text-4xl font-semibold text-ink">Challenge participation and completion</h1>
         <p className="mt-3 max-w-3xl text-[color:var(--muted)]">
-          For MVP, Pulse ships with seeded challenge templates and reports adoption at the aggregate level so employers can encourage healthier routines without forcing visibility into individual behavior.
+          For MVP, Pulse ships with seeded challenge templates and reports adoption at the aggregate level so teams can encourage healthier routines without turning participation into manager-facing scorekeeping.
         </p>
       </section>
       <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
@@ -29,7 +29,7 @@ export default async function AdminChallengesPage() {
               <p>Average progress: {formatPercent(challenge.averageProgress)}</p>
               <div className="rounded-[20px] bg-[#f5f8f4] p-4">
                 <p className="font-medium text-ink">Admin visibility stays aggregate.</p>
-                <p className="mt-2">Pulse reports adoption and completion trends only, not named participant-level logs.</p>
+                <p className="mt-2">Pulse reports trend-level adoption and completion only, not named participant logs.</p>
               </div>
             </CardContent>
           </Card>
