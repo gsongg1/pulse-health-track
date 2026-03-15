@@ -87,5 +87,5 @@ The current MVP runs on seeded in-memory demo data, so a database is not require
 
 - Demo authentication is cookie-based, so no external auth provider is required to explore the app
 - Live app reads currently use seeded in-memory data; Prisma and PostgreSQL are scaffolded for the next iteration
-- Organization-facing views are intentionally limited and framed for support rather than employee scorekeeping
+- Organization-facing views are intentionally limited and framed for support rather than employee scorekeeping.
 - This project is a product prototype and not a medical device
